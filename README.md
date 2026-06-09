@@ -32,15 +32,15 @@ $$U(x,y) = E_{\text{in}}(x,y) \cdot \exp(i\phi(x,y))$$
 
 Propagation over a distance $z$ is computed in the spatial frequency domain:
 
-$$E_{\text{out}} = \mathcal{F}^{-1} \left\{ \mathcal{F}(U) \cdot H(f_x, f_y) \right\}$$
+$$E_{\text{out}} = \mathcal{F}^{-1} \left[ \mathcal{F}(U) \cdot H(f_x, f_y) \right]$$
 
 Where $H(f_x, f_y) = \exp\left(i z \sqrt{k^2 - (2\pi f_x)^2 - (2\pi f_y)^2}\right)$ represents the transfer function of free space.
 
 Training is achieved via an analytical backward pass using **Wirtinger calculus** and **Adjoint Physics operators**. Gradients flow backward through the optical layers by utilizing the complex conjugate of the transfer function ($\text{conj}(H_{\text{tf}})$), representing a physical, time-reversed wave propagation:
 
-$$\frac{\partial L}{\partial U} = \mathcal{F}^{-1} \left\{ \mathcal{F}\left(2 \cdot E \cdot \frac{\partial L}{\partial I}\right) \cdot \text{conj}(H_{\text{tf}}) \right\}$$
+$$\frac{\partial L}{\partial U} = \mathcal{F}^{-1} \left[ \mathcal{F}\left(2 \cdot E \cdot \frac{\partial L}{\partial I}\right) \cdot \text{conj}(H_{\text{tf}}) \right]$$
 
-$$\frac{\partial L}{\partial \phi} = \text{Im}\left( \text{conj}(U) \cdot \frac{\partial L}{\partial U} \right)$$ 
+$$\frac{\partial L}{\partial \phi} = \text{Im}\left( \text{conj}(U) \cdot \frac{\partial L}{\partial U} \right)$$
 
 ## 4. Empirical Benchmarks & Results
 

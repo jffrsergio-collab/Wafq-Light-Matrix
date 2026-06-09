@@ -40,7 +40,7 @@ Training is achieved via an analytical backward pass using **Wirtinger calculus*
 
 $$\frac{\partial L}{\partial U} = \mathcal{F}^{-1} \left\{ \mathcal{F}\left(2 \cdot E \cdot \frac{\partial L}{\partial I}\right) \cdot \text{conj}(H_{\text{tf}}) \right\}$$
 
-$$\frac{\partial L}{\partial \phi} = \text{Im}\left( \text{conj}(U) \cdot \frac{\partial L}{\partial U} \right)$$
+$$\frac{\partial L}{\partial \phi} = \text{Im}\left( \text{conj}(U) \cdot \frac{\partial L}{\partial U} \right)$$ 
 
 ## 4. Empirical Benchmarks & Results
 
